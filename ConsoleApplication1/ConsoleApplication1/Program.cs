@@ -34,15 +34,13 @@ namespace ConsoleApplication1
             string enableTestSet = "";
             List<string> messageLogList = new List<string>();
             List<string> logList = new List<string>();
-            Dictionary<string, string> found = new Dictionary<string, string>();
-            // Obtendo o diretório atual da aplicação
+            Dictionary<string, string> found = new Dictionary<string, string>();            
             string currentDirectory = Directory.GetCurrentDirectory();
             string newDirectoryName = "ConfigFiles";
             string newDirectoryPath = Path.Combine(currentDirectory, newDirectoryName);
 
             if (!Directory.Exists(newDirectoryPath))
             {
-                // Criando o novo diretório
                 Directory.CreateDirectory(newDirectoryPath);               
             }
 
@@ -432,6 +430,8 @@ namespace ConsoleApplication1
                             {
                                 Console.WriteLine("Formato de endereço inesperado.");
                                 Console.WriteLine();
+                                Console.WriteLine("Press any key to continue the aplication.");
+                                Console.ReadKey();
                             }
                         }
 
@@ -511,9 +511,7 @@ namespace ConsoleApplication1
                     Console.WriteLine($"{ex.Message}");
                     Console.WriteLine("Press any key to continue the aplication.");
                     Console.ReadKey();
-                }
-
-                
+                }               
                 if (enableSystemName == "true")
                 {
                     try
